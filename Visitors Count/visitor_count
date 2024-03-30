@@ -1,0 +1,16 @@
+<?php
+// File: visitor_count.php
+$visitor_count_file = "visitor_count.txt";
+
+// Read the current visitor count from the file
+$current_count = (file_exists($visitor_count_file)) ? intval(file_get_contents($visitor_count_file)) : 0;
+
+// Increment the visitor count
+$current_count++;
+
+// Write the updated count back to the file
+file_put_contents($visitor_count_file, $current_count);
+
+// Return the visitor count
+echo $current_count;
+?>
